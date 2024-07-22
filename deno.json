@@ -88,6 +88,7 @@
 		]
 	},
 	"imports": {
+		"@oak/oak": "jsr:@oak/oak@^16.1.0",
 		"@std/fs": "jsr:@std/fs@^0.229.3",
 		"lume/": "https://deno.land/x/lume@v2.2.4/"
 	},

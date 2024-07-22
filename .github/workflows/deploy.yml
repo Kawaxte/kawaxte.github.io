@@ -31,4 +31,4 @@ jobs:
         with:
           project: "krysyxte"
           entrypoint: "assets/js/main.js"
-          root: ""
+          root: "_site"

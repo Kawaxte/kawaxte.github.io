@@ -3,7 +3,6 @@ import esbuild from "lume/plugins/esbuild.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
 import { minify } from "minify";
-import clock from "./src/_data/clock.ts";
 
 const site = lume({
   location: new URL(`https://${Deno.readTextFileSync("CNAME")}`),
@@ -18,9 +17,8 @@ export default site
     extensions: [".ts"],
     options: {
       platform: "browser",
-      entryPoints: ["js/main.ts"],
+      entryPoints: ["js/**/*.ts"],
       format: "esm",
-      splitting: true,
       minify: true,
       treeShaking: true,
     },
@@ -53,7 +51,8 @@ export default site
       page.data.url = page.data.url.replace(/\.js$/, ".min.js");
     }
   })
-  .data("clock", clock)
+  .copy("fonts")
   .copy("icons")
   .copy("images")
+  .copy("svg")
   .copy("CNAME");

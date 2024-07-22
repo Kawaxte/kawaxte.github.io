@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+
+@import '../components/Logo/Logo';
+@import '../components/AliasGenerator/AliasGenerator';
+@import '../components/CursorTrail/CursorTrail';
+@import '../components/SocialIcons/SocialIcons';
+
+body {
+  font-family: $main-font;
+  background-color: $background-color;
+  @include flexCenter;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  @include flexCenter;
+  flex-direction: column;
+}

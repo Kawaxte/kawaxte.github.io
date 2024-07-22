@@ -90,13 +90,13 @@
 	"imports": {
 		"lume/": "https://deno.land/x/lume@v2.2.4/",
 		"lume/core": "https://deno.land/x/lume@v2.2.4/core",
-		"lume/middlewares": "https://deno.land/x/lume@v2.2.4/middlewares"
+		"lume/middlewares": "https://deno.land/x/lume@v2.2.4/middlewares",
+		"minify": "https://deno.land/x/minify@1.0.1/mod.ts"
 	},
 	"tasks": {
-		"lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
 		"clean": "rm -rf _site/",
-		"build:scss": "deno run -A scripts/build_scss.ts",
-		"build": "deno task clean && deno task lume",
-		"serve": "deno task lume -s"
+		"lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+		"lume:build": "deno task clean && deno task lume",
+		"lume:serve": "deno task lume -s"
 	}
 }

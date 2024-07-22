@@ -7,22 +7,9 @@
   <link rel="stylesheet" href="css/styles.min.css">
 </head>
 <body>
-  <header>
-    <div class="clock" id="clock"></div>
-  </header>
-  <main>
-    <div class="logo">
-      <img src="images/logo.png" alt="logo">
-    </div>
-    {{ content | safe}}
-  </main>
-  <footer>
-    <div class="footer-icons">
-      <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer"><img src="svg/github.svg" alt="GitHub"></a>
-      <a href="{{ site.steam }}" target="_blank" rel="noopener noreferrer"><img src="svg/steam.svg" alt="Steam"></a>
-      <a href="{{ site.youtube }}" target="_blank" rel="noopener noreferrer"><img src="svg/youtube.svg" alt="YouTube"></a>
-    </div>
-  </footer>
+  {{ include "partials/header.vto" }}
+  {{ include "partials/main.vto" }}
+  {{ include "partials/footer.vto" }}
   <script src="js/clock.min.js"></script>
   <script src="js/main.min.js"></script>
   <script src="js/parallax.min.js"></script>

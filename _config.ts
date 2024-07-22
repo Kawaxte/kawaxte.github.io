@@ -37,4 +37,5 @@ export default site
       alertColor: true,
     },
   }))
-  .copy("assets/media");
+  .copy("assets/media")
+  .copy("CNAME");

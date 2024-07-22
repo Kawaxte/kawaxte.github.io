@@ -21,19 +21,21 @@
 		]
 	},
 	"include": [
-		"scripts/",
-		"src/"
+		"scripts/**/*.ts",
+		"src/**/*.ts",
+		"_*.ts"
 	],
 	"exclude": [
-		"public/"
+		"./_site"
 	],
 	"lint": {
 		"include": [
-			"scripts/",
-			"src/"
+			"scripts/**/*.ts",
+			"src/**/*.ts",
+			"_*.ts"
 		],
 		"exclude": [
-			"public/"
+			"./_site"
 		],
 		"rules": {
 			"tags": [
@@ -77,11 +79,12 @@
 		"singleQuote": false,
 		"proseWrap": "preserve",
 		"include": [
-			"scripts/",
-			"src/"
+			"scripts/**/*.ts",
+			"src/**/*.ts",
+			"_*.ts"
 		],
 		"exclude": [
-			"public/"
+			"./_site"
 		]
 	},
 	"imports": {
@@ -89,9 +92,10 @@
 		"lume/": "https://deno.land/x/lume@v2.2.4/"
 	},
 	"tasks": {
-		"lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
-		"build:scss": "deno run --allow-read --allow-write scripts/build_scss.ts",
-		"build": "deno task build:scss && deno task lume",
+		"lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+		"clean": "rm -rf _site/",
+		"build:scss": "deno run -A scripts/build_scss.ts",
+		"build": "deno task clean && deno task lume",
 		"serve": "deno task lume -s"
 	}
 }

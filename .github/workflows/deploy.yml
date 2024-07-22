@@ -30,5 +30,10 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "krysyxte"
+<<<<<<< HEAD
           entrypoint: "assets/js/main.js"
+=======
+          import-map: "./deno.json"
+          entrypoint: "assets/js/main.ts"
+>>>>>>> 8a9306f (test)
           root: "_site"

@@ -1,23 +1,15 @@
-import { Application, Router } from "@oak/oak";
+import Server from "lume/core/server.ts";
+import expires from "lume/middlewares/expires.ts";
 
-const router = new Router();
-
-const app = new Application();
-app.use(async (ctx, next) => {
-  try {
-    await ctx.send({
-      root: `${Deno.cwd()}/_site`,
-      index: "index.html",
-    });
-  } catch {
-    next();
-  }
+const server = new Server({
+  port: 8000,
+  root: `${Deno.cwd()}/_site`,
 });
-app.use(router.routes());
-app.use(router.allowedMethods());
 
-async function listen(): Promise<void> {
-  await app.listen({ port: 8000 });
-}
+server.use(expires());
 
-listen();
+server.start();
+
+console.log(
+  `Listening on http://${server.options.hostname}:${server.options.port}`,
+);

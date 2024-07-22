@@ -26,7 +26,7 @@
 		"_*.ts"
 	],
 	"exclude": [
-		"./_site"
+		"_site"
 	],
 	"lint": {
 		"include": [
@@ -35,7 +35,7 @@
 			"_*.ts"
 		],
 		"exclude": [
-			"./_site"
+			"_site"
 		],
 		"rules": {
 			"tags": [
@@ -84,7 +84,7 @@
 			"_*.ts"
 		],
 		"exclude": [
-			"./_site"
+			"_site"
 		]
 	},
 	"imports": {
@@ -97,6 +97,6 @@
 		"clean": "rm -rf _site/",
 		"lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
 		"lume:build": "deno task clean && deno task lume",
-		"lume:serve": "deno task lume -s"
+		"lume:serve": "deno task lume:build -s"
 	}
 }

@@ -12,17 +12,19 @@
   </header>
   <main>
     <div class="logo">
-      <img src="images/sample.png" alt="logo">
+      <img src="images/logo.png" alt="logo">
     </div>
-    {{ content }}
+    {{ content | safe}}
   </main>
   <footer>
     <div class="footer-icons">
-      <a href="#"><img src="icons/github.svg" alt="GitHub"></a>
-      <a href="#"><img src="icons/steam.svg" alt="Steam"></a>
-      <a href="#"><img src="icons/youtube.svg" alt="YouTube"></a>
+      <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer"><img src="svg/github.svg" alt="GitHub"></a>
+      <a href="{{ site.steam }}" target="_blank" rel="noopener noreferrer"><img src="svg/steam.svg" alt="Steam"></a>
+      <a href="{{ site.youtube }}" target="_blank" rel="noopener noreferrer"><img src="svg/youtube.svg" alt="YouTube"></a>
     </div>
   </footer>
+  <script src="js/clock.min.js"></script>
   <script src="js/main.min.js"></script>
+  <script src="js/parallax.min.js"></script>
 </body>
 </html>

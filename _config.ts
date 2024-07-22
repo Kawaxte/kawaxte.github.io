@@ -1,12 +1,14 @@
-import esbuild from "lume/plugins/esbuild.ts";
 import lume from "lume/mod.ts";
+import esbuild from "lume/plugins/esbuild.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
+import { minify } from "minify";
 
 const site = lume({
-  src: "./src",
-  dest: "./_site",
-  includes: "./src/_includes",
+  location: new URL(`https://${Deno.readTextFileSync("CNAME")}`),
+  src: "src",
+  dest: "_site",
+  includes: "src/_includes",
 });
 
 export default site
@@ -15,7 +17,7 @@ export default site
     extensions: [".ts"],
     options: {
       platform: "browser",
-      entryPoints: ["assets/ts/main.ts"],
+      entryPoints: ["js/main.ts"],
       format: "esm",
       splitting: true,
       minify: true,
@@ -23,19 +25,27 @@ export default site
     },
   }))
   .use(vento({
-    extensions: [".vto"],
     options: {
-      dataVarname: "data",
       autoescape: true,
     },
   }))
-  .use(sass({
-    extensions: [".scss", ".sass"],
-    options: {
-      style: "compressed",
-      alertAscii: true,
-      alertColor: true,
-    },
-  }))
-  .copy("assets/media")
+  .use(sass())
+  .process([".html"], (pages): void => {
+    for (const page of pages) {
+      const content = page.content?.toString();
+      if (!content) {
+        throw new Error(`No content for ${page.data.url}`);
+      }
+
+      page.content = minify("html", content);
+    }
+  })
+  .process([".js"], (pages): void => {
+    for (const page of pages) {
+      page.content = page.content?.toString();
+
+      page.data.url = page.data.url.replace(/\.js$/, ".min.js");
+    }
+  })
+  .copy("images")
   .copy("CNAME");

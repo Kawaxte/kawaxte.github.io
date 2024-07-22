@@ -32,3 +32,4 @@ jobs:
           project: "krysyxte"
           entrypoint: "_site/assets/js/main.js"
           import-map: "./deno.json"
+          root: "."

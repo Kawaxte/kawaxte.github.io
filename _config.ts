@@ -3,12 +3,13 @@ import esbuild from "lume/plugins/esbuild.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
 import { minify } from "minify";
+import clock from "./src/_data/clock.ts";
 
 const site = lume({
   location: new URL(`https://${Deno.readTextFileSync("CNAME")}`),
   src: "src",
   dest: "_site",
-  includes: "src/_includes",
+  includes: "_includes",
 });
 
 export default site
@@ -30,6 +31,11 @@ export default site
     },
   }))
   .use(sass())
+  .process([".css"], (pages): void => {
+    for (const page of pages) {
+      page.data.url = page.data.url.replace(/\.css$/, ".min.css");
+    }
+  })
   .process([".html"], (pages): void => {
     for (const page of pages) {
       const content = page.content?.toString();
@@ -47,5 +53,7 @@ export default site
       page.data.url = page.data.url.replace(/\.js$/, ".min.js");
     }
   })
+  .data("clock", clock)
+  .copy("icons")
   .copy("images")
   .copy("CNAME");

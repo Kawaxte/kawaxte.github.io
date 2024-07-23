@@ -31,4 +31,4 @@ jobs:
         with:
           project: "krysyxte"
           entrypoint: "scripts/serve.ts"
-          import-map: "deno.json"
+          import-map: "deno.jsonc"

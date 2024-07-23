@@ -21,7 +21,7 @@
 		]
 	},
 	"include": [
-		"scripts/**/*.ts",
+		// "scripts/**/*.ts",
 		"src/**/*.ts",
 		"_*.ts"
 	],
@@ -30,7 +30,7 @@
 	],
 	"lint": {
 		"include": [
-			"scripts/**/*.ts",
+			// "scripts/**/*.ts",
 			"src/**/*.ts",
 			"_*.ts"
 		],
@@ -79,7 +79,7 @@
 		"singleQuote": false,
 		"proseWrap": "preserve",
 		"include": [
-			"scripts/**/*.ts",
+			// "scripts/**/*.ts",
 			"src/**/*.ts",
 			"_*.ts"
 		],

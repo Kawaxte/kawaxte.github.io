@@ -89,8 +89,6 @@
 	},
 	"imports": {
 		"lume/": "https://deno.land/x/lume@v2.2.4/",
-		"lume/core": "https://deno.land/x/lume@v2.2.4/core",
-		"lume/middlewares": "https://deno.land/x/lume@v2.2.4/middlewares",
 		"minify": "https://deno.land/x/minify@1.0.1/mod.ts"
 	},
 	"tasks": {

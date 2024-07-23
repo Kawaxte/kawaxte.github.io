@@ -1,6 +1,6 @@
 header {
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: #000000cc;
+  backdrop-filter: blur($header-blur);
   padding: 10px 20px;
   position: fixed;
   top: 0;
@@ -10,15 +10,11 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: $header-height;
 
   .clock {
     font-size: 1.2rem;
     color: white;
     font-weight: bold;
   }
-}
-
-body {
-  padding-top: 40px;
 }

@@ -18,7 +18,7 @@ export default site
     options: {
       platform: "browser",
       entryPoints: ["js/**/*.ts"],
-      format: "esm",
+      format: "iife",
       minify: true,
       treeShaking: true,
     },
@@ -51,8 +51,5 @@ export default site
       page.data.url = page.data.url.replace(/\.js$/, ".min.js");
     }
   })
-  .copy("fonts")
-  .copy("icons")
-  .copy("images")
-  .copy("svg")
+  .copy("assets")
   .copy("CNAME");

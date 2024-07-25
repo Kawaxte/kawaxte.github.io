@@ -3,7 +3,7 @@
 		<div class="sl-c-header__nav-group">
 			<a href="/" class="sl-c-header__logo">Krysyxte</a>
 		</div>
-		<div class="sl-c-header__nav-group">
+		<div class="sl-c-header__nav-group sl-c-header__nav-group--desktop">
 			<ul class="sl-c-header__menu">
 				<li><a href="/" class="sl-c-header__link">Home</a></li>
 				<li><a href="#" class="sl-c-header__link">Projects</a></li>
@@ -15,5 +15,42 @@
 				<i class="fas fa-moon" aria-hidden="true" style="display: none;"></i>
 			</button>
 		</div>
+		<button class="sl-c-header__hamburger" aria-label="Toggle menu">
+			<span></span>
+		</button>
 	</nav>
+	<div class="sl-c-header__mobile-menu">
+		<div class="sl-c-header__mobile-menu-content">
+			<div class="sl-c-header__mobile-menu-header">
+				<span class="sl-c-header__mobile-menu-title">{{ site.title }}</span>
+				<button class="sl-c-header__mobile-menu-close" aria-label="Close menu">
+					<i class="fas fa-times"></i>
+				</button>
+			</div>
+			<nav class="sl-c-header__mobile-menu-nav">
+				<a
+					href="/"
+					class="sl-c-header__mobile-menu-link sl-c-button sl-c-button--secondary"
+				><i class="fas fa-home"></i> Home</a>
+				<a
+					href="#"
+					class="sl-c-header__mobile-menu-link sl-c-button sl-c-button--secondary"
+				><i class="fas fa-project-diagram"></i> Projects</a>
+				<a
+					href="#"
+					class="sl-c-header__mobile-menu-link sl-c-button sl-c-button--secondary"
+				><i class="fas fa-info-circle"></i> About</a>
+				<a
+					href="/contact"
+					class="sl-c-header__mobile-menu-link sl-c-button sl-c-button--secondary"
+				><i class="fas fa-envelope"></i> Contact</a>
+			</nav>
+			<div class="sl-c-header__mobile-menu-footer">
+				<p class="sl-c-header__mobile-menu-copyright">&copy; {{
+						new Date().getFullYear()
+					}}
+					{{ site.author.name }}</p>
+			</div>
+		</div>
+	</div>
 </header>

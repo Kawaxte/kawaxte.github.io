@@ -1,3 +1,38 @@
+@mixin mobile {
+	@media (max-width: map-get($breakpoints, mobile)) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: (map-get($breakpoints, mobile) + 1)) and
+			(max-width: map-get($breakpoints, tablet)) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: (map-get($breakpoints, tablet) + 1)) {
+		@content;
+	}
+}
+
+/* transitions */
 @mixin smooth-transiton($duration: .175s) {
 	transition: background-color $duration ease, color $duration ease;
+}
+
+/* animations */
+@mixin floating {
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
 }

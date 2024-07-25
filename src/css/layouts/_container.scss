@@ -1,4 +1,6 @@
 .sl-l-container {
+	display: flex;
 	flex: 1 0 auto;
+	flex-direction: column;
 	padding-top: 4rem;
 }

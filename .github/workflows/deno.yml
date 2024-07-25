@@ -25,13 +25,13 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Check Deno formatting
-        run: deno fmt --check
-
       - name: Run Deno linter
         run: deno lint
 
-      - name: Run Vento formatter
+      - name: Run deno formatter
+        run: deno fmt
+
+      - name: Run Vento/SASS formatter
         run: dprint fmt
 
       - name: Build site

@@ -4,13 +4,15 @@ import minify from "lume/plugins/minify_html.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
 
-const cname = Deno.readTextFileSync("CNAME");
+const isActions = Deno.env.get("GITHUB_ACTIONS") === "true";
 
 const site = lume({
   src: "src",
   dest: "_site",
   includes: "_includes",
-  location: new URL(`https://${cname}`),
+  location: isActions
+    ? new URL("https://krysyxte.github.io")
+    : new URL("https://krysyxte.eu"),
 });
 
 site.ignore("README.md");

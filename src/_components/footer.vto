@@ -2,30 +2,32 @@
 	<div class="sl-c-footer__content">
 		<div class="sl-c-footer__social-icons">
 			<a
-				href="https://github.com/krysyxte"
+				href="{{ site.github.url }}"
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label="GitHub"
+				aria-label="{{ site.github.name }}"
 			>
 				<i class="fab fa-github"></i>
 			</a>
 			<a
-				href="https://steamcommunity.com/id/krysyxte"
+				href="{{ site.steam.url }}"
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label="Steam"
+				aria-label="{{ site.steam.name }}"
 			>
 				<i class="fab fa-steam"></i>
 			</a>
 			<a
-				href="https://www.youtube.com/@krysyxte303"
+				href="{{ site.youtube.url }}"
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label="YouTube"
+				aria-label="{{ site.youtube.name }}"
 			>
 				<i class="fab fa-youtube"></i>
 			</a>
 		</div>
-		<p class="sl-c-footer__copyright">{{ site.copyright }}</p>
+		<p class="sl-c-footer__copyright"
+		>&copy; {{ new Date().getFullYear() }}
+			{{ site.author }}. All rights reserved.</p>
 	</div>
 </footer>

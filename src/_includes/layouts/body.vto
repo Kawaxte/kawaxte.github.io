@@ -1,7 +1,10 @@
 <body class="sl-l-body">
 	{{ include "layouts/container.vto" }}
 
-	{{ include "partials/footer.vto" }}
+	{{ comp.footer() }}
 
 	<script src="js/main.min.js"></script>
+	<noscript>
+		<p>JavaScript ist required for die Functionality of this Seite.</p>
+	</noscript>
 </body>

@@ -23,8 +23,6 @@ export default site
       platform: "browser",
       entryPoints: ["js/**/*.ts"],
       format: "iife",
-      outdir: "assets",
-      // minify: true,
       treeShaking: true,
     },
   }))
@@ -39,4 +37,5 @@ export default site
   .copy("icons", "assets/icons")
   .copy("images", "assets/images")
   .copy("svg", "assets/svg")
+  .copy("CNAME")
   .addEventListener("afterBuild", "dprint fmt");

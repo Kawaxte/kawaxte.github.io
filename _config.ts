@@ -4,12 +4,7 @@ import minify from "lume/plugins/minify_html.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
 
-const isGithubActions = Deno.env.get("GITHUB_ACTIONS") === "true";
-
 const site = lume({
-  location: isGithubActions
-    ? new URL("https://kawaxte.github.io")
-    : new URL("http://localhost"),
   src: "src",
   dest: "_site",
   includes: "_includes",

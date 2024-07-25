@@ -14,7 +14,3 @@
 		--button-hover-colour: #{map-get($colours-greyscale, 700)};
 	}
 }
-
-* {
-	@include smooth-transition;
-}

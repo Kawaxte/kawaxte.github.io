@@ -1,8 +1,6 @@
-name: Deploy
+name: Publish on Deno Deploy
 on:
   push:
-    branches: main
-  pull_request:
     branches: main
 
 jobs:
@@ -11,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      id-token: write # Needed for auth with Deno Deploy
-      contents: read # Needed to clone the repository
+      id-token: write
+      contents: read
 
     steps:
-      - name: Clone repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install Deno

@@ -4,39 +4,38 @@ import minify from "lume/plugins/minify_html.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
 
-const isGitHubActions = Deno.env.get("GITHUB_ACTIONS") === "true";
-
 const site = lume({
-  location: new URL(
-    isGitHubActions
-      ? "https://krysyxte.github.io"
-      : `https://${Deno.readTextFileSync("CNAME")}`,
-  ),
   src: "src",
   dest: "_site",
   includes: "_includes",
 });
 
-export default site
-  .ignore("README.md")
-  .use(esbuild({
-    extensions: [".ts"],
-    options: {
-      platform: "browser",
-      entryPoints: ["js/**/*.ts"],
-      format: "iife",
-      treeShaking: true,
-    },
-  }))
-  .use(minify())
-  .use(sass())
-  .use(vento())
-  .process([".css", ".js"], (pages): void => {
-    for (const page of pages) {
-      page.data.url = page.data.url.replace(/\.(css|js)$/, ".min.$1");
-    }
-  })
-  .copy("icons", "assets/icons")
-  .copy("images", "assets/images")
-  .copy("svg", "assets/svg")
-  .addEventListener("afterBuild", "dprint fmt");
+site.ignore("README.md");
+
+site.use(esbuild({
+  extensions: [".ts"],
+  options: {
+    platform: "browser",
+    entryPoints: ["js/**/*.ts"],
+    format: "iife",
+    treeShaking: true,
+  },
+}));
+site.use(minify());
+site.use(sass());
+site.use(vento());
+
+site.process([".css", ".js"], (pages): void => {
+  for (const page of pages) {
+    page.data.url = page.data.url.replace(/\.(css|js)$/, ".min.$1");
+  }
+});
+
+site.copy("icons", "assets/icons");
+site.copy("images", "assets/images");
+site.copy("svg", "assets/svg");
+site.copy("CNAME");
+
+site.addEventListener("afterBuild", "dprint fmt");
+
+export default site;

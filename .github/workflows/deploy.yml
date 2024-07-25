@@ -1,4 +1,5 @@
 name: Deploy
+
 on:
   push:
     branches: main
@@ -32,3 +33,4 @@ jobs:
           project: "krysyxte"
           entrypoint: "scripts/serve.ts"
           root: "_site"
+          import-map: "deno.jsonc"

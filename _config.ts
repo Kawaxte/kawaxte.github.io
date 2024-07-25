@@ -7,33 +7,33 @@ import vento from "lume/plugins/vento.ts";
 const isActions = Deno.env.get("GITHUB_ACTIONS") === "true";
 
 const site = lume({
-  src: "src",
-  dest: "_site",
-  includes: "_includes",
-  location: isActions
-    ? new URL("https://krysyxte.github.io")
-    : new URL("https://krysyxte.eu"),
+	src: "src",
+	dest: "_site",
+	includes: "_includes",
+	location: isActions
+		? new URL("https://krysyxte.github.io")
+		: new URL("https://krysyxte.eu"),
 });
 
 site.ignore("README.md");
 
 site.use(esbuild({
-  extensions: [".ts"],
-  options: {
-    platform: "browser",
-    entryPoints: ["js/**/*.ts"],
-    format: "iife",
-    treeShaking: true,
-  },
+	extensions: [".ts"],
+	options: {
+		platform: "browser",
+		entryPoints: ["js/**/*.ts"],
+		format: "iife",
+		treeShaking: true,
+	},
 }));
 site.use(minify());
 site.use(sass());
 site.use(vento());
 
 site.process([".css", ".js"], (pages): void => {
-  for (const page of pages) {
-    page.data.url = page.data.url.replace(/\.(css|js)$/, ".min.$1");
-  }
+	for (const page of pages) {
+		page.data.url = page.data.url.replace(/\.(css|js)$/, ".min.$1");
+	}
 });
 
 site.copy("icons", "assets/icons");

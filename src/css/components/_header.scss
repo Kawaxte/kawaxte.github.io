@@ -21,16 +21,17 @@
 		display: none;
 	}
 
-	&__hamburger,
-	&__mobile-menu-close {
+	&__hamburger, &__mobile-menu-close {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
 		border: none;
 		border-radius: map-get($border-radius, medium);
-		background-color: light-dark(var(--light-button-bg-colour),
-				var(--dark-button-bg-colour));
+		background-color: light-dark(
+			var(--light-button-bg-colour),
+			var(--dark-button-bg-colour)
+		);
 		width: 40px;
 		height: 40px;
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
@@ -38,8 +39,10 @@
 
 		&:hover {
 			@include smooth-transiton();
-			background-color: light-dark(var(--light-button-hover-colour),
-					var(--dark-button-hover-colour));
+			background-color: light-dark(
+				var(--light-button-hover-colour),
+				var(--dark-button-hover-colour)
+			);
 		}
 	}
 
@@ -47,17 +50,20 @@
 		span {
 			display: block;
 			position: relative;
-			background-color: light-dark(var(--light-text-colour),
-					var(--dark-text-colour));
+			background-color: light-dark(
+				var(--light-text-colour),
+				var(--dark-text-colour)
+			);
 			width: 18px;
 			height: 2px;
 
-			&::before,
-			&::after {
+			&::before, &::after {
 				position: absolute;
 				left: 0;
-				background-color: light-dark(var(--light-text-colour),
-						var(--dark-text-colour));
+				background-color: light-dark(
+					var(--light-text-colour),
+					var(--dark-text-colour)
+				);
 				width: 100%;
 				height: 100%;
 				content: "";
@@ -113,9 +119,9 @@
 
 		&-header {
 			display: flex;
+			position: relative;
 			justify-content: flex-start;
 			align-items: center;
-			position: relative;
 			margin-bottom: 1rem;
 			padding: 1rem 0;
 			height: 60px;
@@ -207,8 +213,10 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: map-get($border-radius, medium);
-		background-color: light-dark(var(--light-button-bg-colour),
-				var(--dark-button-bg-colour));
+		background-color: light-dark(
+			var(--light-button-bg-colour),
+			var(--dark-button-bg-colour)
+		);
 		padding: 0 1rem;
 		width: 100px;
 		height: 40px;
@@ -218,8 +226,10 @@
 
 		&:hover {
 			@include smooth-transiton();
-			background-color: light-dark(var(--light-button-hover-colour),
-					var(--dark-button-hover-colour));
+			background-color: light-dark(
+				var(--light-button-hover-colour),
+				var(--dark-button-hover-colour)
+			);
 		}
 	}
 
@@ -231,8 +241,10 @@
 		margin-left: 1rem;
 		border: none;
 		border-radius: map-get($border-radius, medium);
-		background-color: light-dark(var(--light-button-bg-colour),
-				var(--dark-button-bg-colour));
+		background-color: light-dark(
+			var(--light-button-bg-colour),
+			var(--dark-button-bg-colour)
+		);
 		width: 40px;
 		height: 40px;
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
@@ -240,8 +252,10 @@
 
 		&:hover {
 			@include smooth-transiton();
-			background-color: light-dark(var(--light-button-hover-colour),
-					var(--dark-button-hover-colour));
+			background-color: light-dark(
+				var(--light-button-hover-colour),
+				var(--dark-button-hover-colour)
+			);
 		}
 	}
 }

@@ -3,8 +3,8 @@ import { initMobileMenu } from "./mobile_menu.ts";
 import { initThemeToggle } from "./theme_toggle.ts";
 
 document.addEventListener("DOMContentLoaded", () => {
-  initThemeToggle();
-  initMobileMenu();
+	initThemeToggle();
+	initMobileMenu();
 
-  initContactForm();
+	initContactForm();
 });

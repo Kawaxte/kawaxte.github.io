@@ -7,12 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const moonIcon = themeToggle.querySelector(".fa-moon") as HTMLElement;
 
   function toggleTheme(): void {
-    const isDark = document.documentElement.classList.toggle("dark-theme");
+    const isDark = document.documentElement.style.colorScheme === "dark";
+    document.documentElement.style.colorScheme = isDark ? "light" : "dark";
 
-    sunIcon.style.display = isDark ? "none" : "inline-block";
-    moonIcon.style.display = isDark ? "inline-block" : "none";
+    sunIcon.style.display = isDark ? "inline-block" : "none";
+    moonIcon.style.display = isDark ? "none" : "inline-block";
 
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    localStorage.setItem("theme", isDark ? "light" : "dark");
   }
 
   const prefersDark = globalThis.matchMedia("(prefers-color-scheme: dark)");

@@ -10,7 +10,7 @@
 
 	&__title {
 		margin-bottom: .25rem;
-		color: var(--text-colour);
+		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 		font-weight: bold;
 		font-size: 2.5rem;
 		line-height: 1.2;
@@ -23,7 +23,7 @@
 	&__description {
 		margin-bottom: 2rem;
 		max-width: 600px;
-		color: var(--text-colour);
+		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 		font-size: 1.25rem;
 	}
 

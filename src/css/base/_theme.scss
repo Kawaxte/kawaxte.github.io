@@ -1,16 +1,19 @@
 :root {
-	--text-colour: #{map-get($colours-greyscale, 900)};
+	color-scheme: light dark;
+	--light-text-colour: #{map-get($colours-greyscale, 900)};
+	--light-bg-colour: #{map-get($colours-greyscale, 100)};
+	--light-button-bg-colour: #{map-get($colours-greyscale, 200)};
+	--light-button-hover-colour: #{map-get($colours-greyscale, 300)};
+	--dark-text-colour: #{map-get($colours-greyscale, 100)};
+	--dark-bg-colour: #{map-get($colours-greyscale, 900)};
+	--dark-button-bg-colour: #{map-get($colours-greyscale, 800)};
+	--dark-button-hover-colour: #{map-get($colours-greyscale, 700)};
 	--accent-colour: #{map-get($colours-vibrant, accent)};
 	--accent-colour-dark: #{map-get($colours-vibrant, dark)};
-	--bg-colour: #{map-get($colours-greyscale, 100)};
-	--button-bg-colour: #{map-get($colours-greyscale, 200)};
-	--button-hover-colour: #{map-get($colours-greyscale, 300)};
 	--font-family: "Corbel", sans-serif;
+}
 
-	&.dark-theme {
-		--text-colour: #{map-get($colours-greyscale, 100)};
-		--bg-colour: #{map-get($colours-greyscale, 900)};
-		--button-bg-colour: #{map-get($colours-greyscale, 800)};
-		--button-hover-colour: #{map-get($colours-greyscale, 700)};
-	}
+body {
+	background-color: light-dark(var(--light-bg-colour), var(--dark-bg-colour));
+	color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 }

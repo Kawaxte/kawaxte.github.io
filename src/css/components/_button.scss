@@ -15,11 +15,17 @@
 	}
 
 	&--secondary {
-		background-color: var(--button-bg-colour);
-		color: var(--text-colour);
+		background-color: light-dark(
+			var(--light-button-bg-colour),
+			var(--dark-button-bg-colour)
+		);
+		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 
 		&:hover {
-			background-color: var(--button-hover-colour);
+			background-color: light-dark(
+				var(--light-button-hover-colour),
+				var(--dark-button-hover-colour)
+			);
 		}
 	}
 }

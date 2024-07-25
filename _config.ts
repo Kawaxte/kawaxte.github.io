@@ -4,11 +4,13 @@ import minify from "lume/plugins/minify_html.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
 
+const cname = Deno.readTextFileSync("CNAME");
+
 const site = lume({
   src: "src",
   dest: "_site",
   includes: "_includes",
-  location: new URL(`https://krysyxte.eu`),
+  location: new URL(`https://${cname}`),
 });
 
 site.ignore("README.md");

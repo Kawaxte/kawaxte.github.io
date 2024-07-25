@@ -31,9 +31,6 @@ jobs:
       - name: Run deno formatter
         run: deno fmt
 
-      - name: Run Vento/SASS formatter
-        run: dprint fmt
-
       - name: Build site
         run: deno task lume:build
 

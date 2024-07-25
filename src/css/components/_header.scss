@@ -54,6 +54,7 @@
 		text-decoration: none;
 
 		&:hover {
+			@include smooth-transiton();
 			background-color: light-dark(
 				var(--light-button-hover-colour),
 				var(--dark-button-hover-colour)
@@ -79,6 +80,7 @@
 		font-size: 1.25rem;
 
 		&:hover {
+			@include smooth-transiton();
 			background-color: light-dark(
 				var(--light-button-hover-colour),
 				var(--dark-button-hover-colour)

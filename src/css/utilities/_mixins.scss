@@ -1,1 +1,3 @@
-
+@mixin smooth-transiton($duration: .175s) {
+	transition: background-color $duration ease, color $duration ease;
+}

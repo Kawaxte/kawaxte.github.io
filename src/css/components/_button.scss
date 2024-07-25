@@ -10,6 +10,7 @@
 		color: #ffffff;
 
 		&:hover {
+			@include smooth-transiton();
 			background-color: var(--accent-colour-dark);
 		}
 	}
@@ -22,6 +23,7 @@
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 
 		&:hover {
+			@include smooth-transiton();
 			background-color: light-dark(
 				var(--light-button-hover-colour),
 				var(--dark-button-hover-colour)

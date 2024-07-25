@@ -1,16 +1,20 @@
-name: Publish on Deno Deploy
+name: Deploy to GitHub Pages
+uses: JamesIves/github-pages-deploy-action@v4.6.3
+
 on:
   push:
-    branches: main
+    branches: [main]
+
+permissions:
+  contents: write
 
 jobs:
-  deploy:
-    name: Deploy
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
 
     permissions:
-      id-token: write
-      contents: read
+      contents: write
 
     steps:
       - name: Checkout
@@ -21,12 +25,10 @@ jobs:
         with:
           deno-version: v1.x
 
-      - name: Build step
-        run: "deno task lume:build"
+      - name: Build
+        run: deno task lume:build
 
-      - name: Upload to Deno Deploy
-        uses: denoland/deployctl@v1
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          project: "krysyxte"
-          entrypoint: "scripts/serve.ts"
-          import-map: "deno.jsonc"
+          folder: _site

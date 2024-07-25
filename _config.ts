@@ -8,6 +8,7 @@ const site = lume({
   src: "src",
   dest: "_site",
   includes: "_includes",
+  location: new URL("https://krysyxte.github.io/"),
 });
 
 site.ignore("README.md");

@@ -1,23 +1,26 @@
-<section class="sl-c-hero">
-	<div class="sl-c-hero__content">
-		<h1 class="sl-c-hero__title">Hello, I'm <span class="sl-c-hero__name">
-				{{ site.author }}
-			</span></h1>
-		<p class="sl-c-hero__description"
-		>Alleviating boredom through code, alternating between dissatisfaction und
-			stagnation.</p>
-		<div class="sl-c-hero__buttons">
-			<a href="/projects" class="sl-c-button sl-c-button--primary"
-			>View Projects</a>
-			<a href="/contact" class="sl-c-button sl-c-button--secondary"
-			>Contact Me</a>
+<section class="sl-l-content-split sl-c-hero">
+	<div class="sl-l-content-split__container">
+		<div class="sl-l-content-split__content sl-c-hero__content">
+			<h1 class="sl-c-hero__title">Hello, I'm <span class="sl-c-hero__name">{{
+					site.author.name
+				}}</span></h1>
+			<p class="sl-c-hero__description">
+				Alleviating boredom through code, alternating between dissatisfaction
+				und stagnation.
+			</p>
+			<div class="sl-c-hero__buttons">
+				<a href="/projects" class="sl-c-button sl-c-button--primary"
+				>View Projects</a>
+				<a href="/contact" class="sl-c-button sl-c-button--secondary"
+				>Get in Touch</a>
+			</div>
 		</div>
-	</div>
-	<div class="sl-c-hero__image">
-		<img
-			src="assets/images/logo.png"
-			alt="Logo"
-			class="sl-c-hero__logo"
-		>
+		<div class="sl-l-content-split__image-container">
+			<img
+				src="/assets/images/logo.png"
+				alt="Logo"
+				class="sl-l-content-split__image sl-c-hero__logo"
+			>
+		</div>
 	</div>
 </section>

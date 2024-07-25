@@ -1,0 +1,57 @@
+.sl-c-hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0;
+
+	&__content {
+		flex: 1;
+	}
+
+	&__title {
+		margin-bottom: .25rem;
+		color: var(--text-colour);
+		font-weight: bold;
+		font-size: 2.5rem;
+		line-height: 1.2;
+	}
+
+	&__name {
+		color: var(--accent-colour);
+	}
+
+	&__description {
+		margin-bottom: 2rem;
+		max-width: 600px;
+		color: var(--text-colour);
+		font-size: 1.25rem;
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	&__image {
+		display: flex;
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__logo {
+		animation: float 3s ease-in-out infinite;
+		max-width: 85%;
+		height: auto;
+	}
+
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0px);
+		}
+
+		50% {
+			transform: translateY(-10px);
+		}
+	}
+}

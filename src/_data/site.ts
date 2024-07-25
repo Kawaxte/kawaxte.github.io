@@ -1,6 +1,4 @@
-export default {
-  github: "https://github.com/Kawaxte",
-  steam: "https://steamcommunity.com/id/Kawaxte",
-  youtube: "https://www.youtube.com/@krysyxte303",
-  copyright: `${new Date().getFullYear()} Krystian`,
-};
+export const creator = "Krystian";
+export const copyright = `\u{00a9} ${
+  new Date().getFullYear()
+} ${creator}. All rights reserved.`;

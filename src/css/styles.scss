@@ -1,44 +1,16 @@
-@import "fonts";
-@import "mixins";
-@import "variables";
+@import "utilities/functions";
+@import "utilities/mixins";
+@import "utilities/variables";
 
-@import "components/body";
-@import "components/header";
+@import "base/reset";
+@import "base/theme";
+@import "base/typography";
+
+@import "components/button";
 @import "components/footer";
-@import "components/main";
+@import "components/header";
+@import "components/hero";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-
-  @media screen and (max-width: $tablet-breakpoint) {
-    font-size: 14px;
-  }
-
-  @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 12px;
-  }
-}
-
-body {
-  font-family: $main-font;
-  font-size: 1rem;
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
-.responsive-text {
-  @include responsive-font-size(14, 18);
-}
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
+@import "layouts/body";
+@import "layouts/container";
+@import "layouts/main";

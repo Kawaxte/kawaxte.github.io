@@ -1,3 +1,19 @@
-<header>
-  {{ include "components/clock.vto" }}
+<header class="sl-c-header">
+	<nav class="sl-c-header__nav">
+		<div class="sl-c-header__nav-group">
+			<a href="/" class="sl-c-header__logo">Krysyxte</a>
+		</div>
+		<div class="sl-c-header__nav-group">
+			<ul class="sl-c-header__menu">
+				<li><a href="/" class="sl-c-header__link">Home</a></li>
+				<li><a href="/projects" class="sl-c-header__link">Projects</a></li>
+				<li><a href="/about" class="sl-c-header__link">About</a></li>
+				<li><a href="/contact" class="sl-c-header__link">Contact</a></li>
+			</ul>
+			<button class="sl-c-header__theme-toggle" aria-label="Toggle theme">
+				<i class="fas fa-sun" aria-hidden="true"></i>
+				<i class="fas fa-moon" aria-hidden="true" style="display: none;"></i>
+			</button>
+		</div>
+	</nav>
 </header>

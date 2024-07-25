@@ -1,0 +1,25 @@
+{
+  "lineWidth": 80,
+  "malva": {
+    // https://dprint.dev/plugins/malva/config/
+    "useTabs": true,
+    "omitNumberLeadingZero": true,
+    "declarationOrder": "concentric"
+  },
+  "markup": {
+    // https://dprint.dev/plugins/markup_fmt/config/
+    "useTabs": true,
+    "formatComments": true,
+    "scriptIndent": true,
+    "styleIndent": true,
+    "closingTagLineBreakForEmpty": "always",
+    "whitespaceSensitivity": "strict"
+  },
+  "excludes": [
+    "**/*-lock"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/g-plane/malva-v0.5.1.wasm",
+    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.11.0.wasm"
+  ]
+}

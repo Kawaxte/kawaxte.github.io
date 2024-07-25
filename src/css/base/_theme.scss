@@ -1,0 +1,20 @@
+:root {
+	--text-colour: #{map-get($colours-greyscale, 900)};
+	--accent-colour: #{map-get($colours-vibrant, accent)};
+	--accent-colour-dark: #{map-get($colours-vibrant, dark)};
+	--bg-colour: #{map-get($colours-greyscale, 100)};
+	--button-bg-colour: #{map-get($colours-greyscale, 200)};
+	--button-hover-colour: #{map-get($colours-greyscale, 300)};
+	--font-family: "Corbel", sans-serif;
+
+	&.dark-theme {
+		--text-colour: #{map-get($colours-greyscale, 100)};
+		--bg-colour: #{map-get($colours-greyscale, 900)};
+		--button-bg-colour: #{map-get($colours-greyscale, 800)};
+		--button-hover-colour: #{map-get($colours-greyscale, 700)};
+	}
+}
+
+* {
+	@include smooth-transition;
+}

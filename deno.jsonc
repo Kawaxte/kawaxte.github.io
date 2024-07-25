@@ -21,7 +21,6 @@
 		]
 	},
 	"include": [
-		// "scripts/**/*.ts",
 		"src/**/*.ts",
 		"_*.ts"
 	],
@@ -30,7 +29,6 @@
 	],
 	"lint": {
 		"include": [
-			// "scripts/**/*.ts",
 			"src/**/*.ts",
 			"_*.ts"
 		],
@@ -79,7 +77,6 @@
 		"singleQuote": false,
 		"proseWrap": "preserve",
 		"include": [
-			// "scripts/**/*.ts",
 			"src/**/*.ts",
 			"_*.ts"
 		],
@@ -88,8 +85,7 @@
 		]
 	},
 	"imports": {
-		"lume/": "https://deno.land/x/lume@v2.2.4/",
-		"minify": "https://deno.land/x/minify@1.0.1/mod.ts"
+		"lume/": "https://deno.land/x/lume@v2.2.4/"
 	},
 	"tasks": {
 		"clean": "rm -rf _site/",

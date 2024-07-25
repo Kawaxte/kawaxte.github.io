@@ -22,7 +22,7 @@ site.use(esbuild({
   options: {
     platform: "browser",
     entryPoints: ["js/**/*.ts"],
-    format: "esm",
+    format: "iife",
     treeShaking: true,
   },
 }));

@@ -8,7 +8,7 @@ const site = lume({
   src: "src",
   dest: "_site",
   includes: "_includes",
-  location: new URL(`https://${Deno.readFileSync("CNAME")}`),
+  location: new URL(`https://krysyxte.eu`),
 });
 
 site.ignore("README.md");
@@ -18,7 +18,7 @@ site.use(esbuild({
   options: {
     platform: "browser",
     entryPoints: ["js/**/*.ts"],
-    format: "iife",
+    format: "esm",
     treeShaking: true,
   },
 }));

@@ -4,7 +4,14 @@ import minify from "lume/plugins/minify_html.ts";
 import sass from "lume/plugins/sass.ts";
 import vento from "lume/plugins/vento.ts";
 
+const isGitHubActions = Deno.env.get("GITHUB_ACTIONS") === "true";
+
 const site = lume({
+  location: new URL(
+    isGitHubActions
+      ? "https://krysyxte.github.io"
+      : `https://${Deno.readTextFileSync("CNAME")}`,
+  ),
   src: "src",
   dest: "_site",
   includes: "_includes",
@@ -32,5 +39,4 @@ export default site
   .copy("icons", "assets/icons")
   .copy("images", "assets/images")
   .copy("svg", "assets/svg")
-  .copy("CNAME")
   .addEventListener("afterBuild", "dprint fmt");

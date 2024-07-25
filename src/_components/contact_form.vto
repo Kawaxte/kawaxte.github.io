@@ -1,0 +1,56 @@
+<form
+	class="sl-c-contact__form"
+	id="contactForm"
+>
+	<input type="hidden" name="_subject" value="Contact">
+	<input type="hidden" name="_captcha" value="true">
+	<label for="name" class="sl-c-contact__label visually-hidden"></label>
+	<input
+		type="text"
+		id="name"
+		name="name"
+		class="sl-c-contact__input"
+		placeholder="Name"
+		required
+		aria-required="true"
+	>
+	<label for="email" class="sl-c-contact__label visually-hidden"></label>
+	<input
+		type="email"
+		id="email"
+		name="email"
+		class="sl-c-contact__input"
+		placeholder="Email Address (optional)"
+	>
+	<label for="message" class="sl-c-contact__label visually-hidden"></label>
+	<textarea
+		id="message"
+		name="message"
+		class="sl-c-contact__textarea"
+		placeholder="Your Message"
+		required
+		aria-required="true"
+	></textarea>
+	<button
+		type="submit"
+		class="sl-c-button sl-c-button--primary sl-c-contact__submit"
+	>
+		<span class="button-text">Send</span>
+	</button>
+</form>
+<div
+	id="formSuccess"
+	class="sl-c-contact__success"
+	style="display: none;"
+>
+	<i class="fas fa-check-circle"></i>
+	<p>Danke for your Message. I'll get back to you soon!</p>
+</div>
+<div
+	id="formFailure"
+	class="sl-c-contact__failure"
+	style="display: none;"
+>
+	<i class="fas fa-times-circle"></i>
+	<p>An error occurred. Please try again later.</p>
+</div>

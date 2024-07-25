@@ -8,7 +8,7 @@ const site = lume({
   src: "src",
   dest: "_site",
   includes: "_includes",
-  location: new URL("https://krysyxte.github.io/"),
+  location: new URL(`https://${Deno.readFileSync("CNAME")}`),
 });
 
 site.ignore("README.md");

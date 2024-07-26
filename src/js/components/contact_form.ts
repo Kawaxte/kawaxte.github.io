@@ -4,9 +4,8 @@ export function initContactForm(): void {
 	const form = $("#contactForm") as HTMLFormElement;
 	const formSuccess = $("#formSuccess") as HTMLDivElement;
 	const formFailure = $("#formFailure") as HTMLDivElement;
-	const submitButton = form.querySelector(
-		"button[type='submit']",
-	) as HTMLButtonElement;
+
+	const submitButton = $(`button[type="submit"]`, form) as HTMLButtonElement;
 
 	if (form) {
 		form.addEventListener("submit", handleSubmit);

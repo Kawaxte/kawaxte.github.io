@@ -1,8 +1,8 @@
 .sl-c-contact {
 	&__title {
-		margin-bottom: 1.5rem;
+		margin-bottom: map-get($margins, l);
 		color: var(--accent-colour);
-		font-size: map-get($font-sizes, xxlarge);
+		font-size: map-get($font-sizes, xxl);
 	}
 
 	&__form {
@@ -18,8 +18,8 @@
 			var(--light-input-bg-colour),
 			var(--dark-input-bg-colour)
 		);
-		padding: .75rem 1rem;
-		font-size: map-get($font-sizes, medium);
+		padding: map-get($padding, s) map-get($padding, m);
+		font-size: map-get($font-sizes, m);
 
 		&::placeholder {
 			color: slategrey;
@@ -39,19 +39,19 @@
 	&__submit {
 		align-self: flex-start;
 		width: 100%;
-		font-size: map-get($font-sizes, medium);
+		font-size: map-get($font-sizes, m);
 		letter-spacing: .05em;
 		text-transform: uppercase;
 	}
 
 	&__success {
-		font-size: map-get($font-sizes, large);
+		font-size: map-get($font-sizes, l);
 		text-align: center;
 
 		i {
-			margin-bottom: 1rem;
+			margin-bottom: map-get($margins, m);
 			color: limegreen;
-			font-size: map-get($font-sizes, xxxlarge);
+			font-size: map-get($font-sizes, xxxl);
 		}
 
 		p {
@@ -60,13 +60,13 @@
 	}
 
 	&__failure {
-		font-size: map-get($font-sizes, large);
+		font-size: map-get($font-sizes, l);
 		text-align: center;
 
 		i {
-			margin-bottom: 1rem;
+			margin-bottom: map-get($margins, m);
 			color: red;
-			font-size: map-get($font-sizes, xxxlarge);
+			font-size: map-get($font-sizes, xxxl);
 		}
 
 		p {

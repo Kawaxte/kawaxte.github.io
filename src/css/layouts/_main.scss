@@ -1,5 +1,5 @@
 .sl-l-main {
 	margin: 0 auto;
-	padding: 2rem .25rem;
-	max-width: 1200px;
+	padding: map-get($padding, xl) map-get($padding, xxs);
+	max-width: map-get($content-sizes, max-xxl);
 }

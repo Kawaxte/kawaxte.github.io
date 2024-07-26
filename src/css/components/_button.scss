@@ -1,7 +1,7 @@
 .sl-c-button {
 	display: inline-block;
-	border-radius: map-get($border-radius, medium);
-	padding: .75rem 1.5rem;
+	border-radius: map-get($border-radius, m);
+	padding: map-get($padding, s) map-get($padding, l);
 	font-weight: bold;
 	text-decoration: none;
 

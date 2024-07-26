@@ -1,9 +1,9 @@
 .sl-c-hero {
 	&__title {
-		margin-bottom: .25rem;
+		margin-bottom: map-get($margins, xs);
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 		font-weight: bold;
-		font-size: map-get($font-sizes, xxlarge);
+		font-size: map-get($font-sizes, xxl);
 		line-height: 1.2;
 	}
 
@@ -12,13 +12,13 @@
 	}
 
 	&__description {
-		margin-bottom: 2rem;
-		max-width: 600px;
+		margin-bottom: map-get($margins, xl);
+		max-width: map-get($content-sizes, max-m);
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
-		font-size: map-get($font-sizes, medium);
+		font-size: map-get($font-sizes, m);
 
 		@include desktop {
-			font-size: map-get($font-sizes, large);
+			font-size: map-get($font-sizes, l);
 		}
 	}
 

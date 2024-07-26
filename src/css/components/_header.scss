@@ -6,15 +6,15 @@
 	z-index: 1000;
 	transition: box-shadow .3s ease;
 	background-color: light-dark(var(--light-bg-colour), var(--dark-bg-colour));
-	padding: 1rem 0;
+	padding: map-get($padding, m) 0;
 
 	&__nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin: 0 auto;
-		padding: 0 1rem;
-		max-width: 1200px;
+		padding: 0 map-get($padding, m);
+		max-width: map-get($content-sizes, max-xxl);
 	}
 
 	&__nav-group--desktop {
@@ -27,7 +27,7 @@
 		align-items: center;
 		cursor: pointer;
 		border: none;
-		border-radius: map-get($border-radius, medium);
+		border-radius: map-get($border-radius, m);
 		background-color: light-dark(
 			var(--light-button-bg-colour),
 			var(--dark-button-bg-colour)
@@ -35,7 +35,7 @@
 		width: 40px;
 		height: 40px;
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
-		font-size: map-get($font-sizes, large);
+		font-size: map-get($font-sizes, l);
 
 		&:hover {
 			@include smooth-transiton();
@@ -107,13 +107,13 @@
 		box-shadow: -2px 0 10px #0000001a;
 		background-color: light-dark(var(--light-bg-colour), var(--dark-bg-colour));
 		width: 80%;
-		max-width: 300px;
+		max-width: map-get($content-sizes, max-s);
 		overflow-y: auto;
 
 		&-content {
 			display: flex;
 			flex-direction: column;
-			padding: 1rem;
+			padding: map-get($padding, m);
 			height: 100%;
 		}
 
@@ -122,14 +122,14 @@
 			position: relative;
 			justify-content: flex-start;
 			align-items: center;
-			margin-bottom: 1rem;
-			padding: 1rem 0;
+			margin-bottom: map-get($margins, m);
+			padding: map-get($padding, m) 0;
 			height: 60px;
 		}
 
 		&-title {
 			font-weight: bold;
-			font-size: map-get($font-sizes, xlarge);
+			font-size: map-get($font-sizes, xl);
 			text-align: left;
 		}
 
@@ -169,7 +169,7 @@
 		&-copyright {
 			opacity: .8;
 			color: light-dark(var(--light-text-colour), var(--dark-text-colour));
-			font-size: map-get($font-sizes, small);
+			font-size: map-get($font-sizes, s);
 			text-align: center;
 		}
 	}
@@ -196,7 +196,7 @@
 	&__logo {
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 		font-weight: bold;
-		font-size: map-get($font-sizes, xlarge);
+		font-size: map-get($font-sizes, xl);
 		text-decoration: none;
 	}
 
@@ -212,16 +212,16 @@
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
-		border-radius: map-get($border-radius, medium);
+		border-radius: map-get($border-radius, m);
 		background-color: light-dark(
 			var(--light-button-bg-colour),
 			var(--dark-button-bg-colour)
 		);
-		padding: 0 1rem;
+		padding: 0 map-get($padding, m);
 		width: 100px;
 		height: 40px;
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
-		font-size: map-get($font-sizes, medium);
+		font-size: map-get($font-sizes, m);
 		text-decoration: none;
 
 		&:hover {
@@ -238,9 +238,9 @@
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
-		margin-left: 1rem;
+		margin-left: map-get($margins, m);
 		border: none;
-		border-radius: map-get($border-radius, medium);
+		border-radius: map-get($border-radius, m);
 		background-color: light-dark(
 			var(--light-button-bg-colour),
 			var(--dark-button-bg-colour)
@@ -248,7 +248,7 @@
 		width: 40px;
 		height: 40px;
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
-		font-size: map-get($font-sizes, large);
+		font-size: map-get($font-sizes, l);
 
 		&:hover {
 			@include smooth-transiton();

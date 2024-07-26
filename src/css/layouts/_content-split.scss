@@ -3,10 +3,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 1rem;
+	padding: map-get($padding, m);
 
 	@include desktop {
-		padding: 1.5rem;
+		padding: map-get($padding, l);
 	}
 
 	&__container {
@@ -27,18 +27,24 @@
 		@include desktop {
 			flex-direction: row;
 			justify-content: space-between;
-			max-width: 1100px;
-			min-height: 400px;
+			max-width: map-get($content-sizes, max-xxl);
+			min-height: map-get($content-sizes, max-s);
 		}
 	}
 
 	&__content, &__image-container {
-		padding: 1.5rem;
+		padding: map-get($padding, l);
 		width: 100%;
 
 		@include desktop {
 			width: 50%;
 		}
+	}
+
+	&__image-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__image {

@@ -23,8 +23,12 @@
 }
 
 /* animations */
-@mixin floating {
-	animation: float 3s ease-in-out infinite;
+@mixin floating($duration: 3s) {
+	animation: float $duration ease-in-out infinite;
+}
+
+@mixin spinning($duration: 1s) {
+	animation: spin $duration linear infinite;
 }
 
 @keyframes float {
@@ -34,5 +38,15 @@
 
 	50% {
 		transform: translateY(-10px);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
 	}
 }

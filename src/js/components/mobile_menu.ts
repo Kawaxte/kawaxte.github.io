@@ -1,8 +1,10 @@
-export function initMobileMenu(): void {
-	const hamburger = document.querySelector(".sl-c-header__hamburger");
+import { $ } from "../utils/dom.ts";
 
-	const mobileMenu = document.querySelector(".sl-c-header__mobile-menu");
-	const closeButton = document.querySelector(".sl-c-header__mobile-menu-close");
+export function initMobileMenu(): void {
+	const hamburger = $(".sl-c-header__hamburger");
+
+	const mobileMenu = $(".sl-c-header__mobile-menu");
+	const closeButton = $(".sl-c-header__mobile-menu-close");
 
 	const overlay = document.createElement("div");
 	overlay.classList.add("sl-c-header__overlay");
@@ -17,7 +19,7 @@ export function initMobileMenu(): void {
 			: "";
 	}
 
-	hamburger?.addEventListener("click", toggleMenu);
-	closeButton?.addEventListener("click", toggleMenu);
-	overlay.addEventListener("click", toggleMenu);
+	[hamburger, closeButton, overlay].forEach((el) =>
+		el?.addEventListener("click", toggleMenu)
+	);
 }

@@ -1,12 +1,18 @@
 <body class="sl-l-body">
+	<div class="sl-c-throbber" id="loadingOverlay">
+		<div class="sl-c-throbber__spinner"></div>
+	</div>
 	{{ include "layouts/container.vto" }}
 
 	{{ comp.footer() }}
 
-	<script src="/js/contact_form.min.js"></script>
+	<script src="/js/components/mobile_menu.min.js"></script>
+	<script src="/js/components/theme_toggle.min.js"></script>
+	<script src="/js/components/contact_form.min.js"></script>
+	<script src="/js/services/page_transitions.min.js"></script>
+	<script src="/js/utils/dom.min.js"></script>
+	<script src="/js/utils/theme.min.js"></script>
 	<script src="/js/main.min.js"></script>
-	<script src="/js/mobile_menu.min.js"></script>
-	<script src="/js/theme_toggle.min.js"></script>
 	<noscript>
 		<p>JavaScript ist required for die Functionality of this Seite.</p>
 	</noscript>

@@ -11,13 +11,12 @@
 		gap: 1rem;
 	}
 
-	&__input, &__textarea {
+	&__input,
+	&__textarea {
+		background-color: light-dark(var(--light-input-bg-colour),
+				var(--dark-input-bg-colour));
 		border: none;
 		border-radius: .5rem;
-		background-color: light-dark(
-			var(--light-input-bg-colour),
-			var(--dark-input-bg-colour)
-		);
 		padding: map-get($padding, s) map-get($padding, m);
 		font-size: map-get($font-sizes, m);
 

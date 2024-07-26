@@ -1,17 +1,17 @@
 .sl-c-throbber {
-	display: flex;
 	position: fixed;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	z-index: 9999;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	visibility: hidden;
 	opacity: 0;
-	z-index: 9999;
-	transition: opacity .3s ease, visibility .3s ease;
 	background-color: light-dark(var(--light-bg-colour), var(--dark-bg-colour));
+	transition: opacity .3s ease, visibility .3s ease;
 
 	&.is-active {
 		visibility: visible;

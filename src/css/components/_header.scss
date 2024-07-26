@@ -21,28 +21,25 @@
 		display: none;
 	}
 
-	&__hamburger, &__mobile-menu-close {
+	&__hamburger,
+	&__mobile-menu-close {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
 		border: none;
 		border-radius: map-get($border-radius, m);
-		background-color: light-dark(
-			var(--light-button-bg-colour),
-			var(--dark-button-bg-colour)
-		);
-		width: 40px;
-		height: 40px;
+		background-color: light-dark(var(--light-button-bg-colour),
+				var(--dark-button-bg-colour));
+		width: map-get($sizes, max-s);
+		height: map-get($sizes, max-s);
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 		font-size: map-get($font-sizes, l);
 
 		&:hover {
 			@include smooth-transiton();
-			background-color: light-dark(
-				var(--light-button-hover-colour),
-				var(--dark-button-hover-colour)
-			);
+			background-color: light-dark(var(--light-button-hover-colour),
+					var(--dark-button-hover-colour));
 		}
 	}
 
@@ -50,20 +47,17 @@
 		span {
 			display: block;
 			position: relative;
-			background-color: light-dark(
-				var(--light-text-colour),
-				var(--dark-text-colour)
-			);
+			background-color: light-dark(var(--light-text-colour),
+					var(--dark-text-colour));
 			width: 18px;
 			height: 2px;
 
-			&::before, &::after {
+			&::before,
+			&::after {
 				position: absolute;
 				left: 0;
-				background-color: light-dark(
-					var(--light-text-colour),
-					var(--dark-text-colour)
-				);
+				background-color: light-dark(var(--light-text-colour),
+						var(--dark-text-colour));
 				width: 100%;
 				height: 100%;
 				content: "";
@@ -213,23 +207,19 @@
 		justify-content: center;
 		align-items: center;
 		border-radius: map-get($border-radius, m);
-		background-color: light-dark(
-			var(--light-button-bg-colour),
-			var(--dark-button-bg-colour)
-		);
+		background-color: light-dark(var(--light-button-bg-colour),
+				var(--dark-button-bg-colour));
 		padding: 0 map-get($padding, m);
-		width: 100px;
-		height: 40px;
+		width: map-get($sizes, max-xl);
+		height: map-get($sizes, max-s);
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
 		font-size: map-get($font-sizes, m);
 		text-decoration: none;
 
 		&:hover {
 			@include smooth-transiton();
-			background-color: light-dark(
-				var(--light-button-hover-colour),
-				var(--dark-button-hover-colour)
-			);
+			background-color: light-dark(var(--light-button-hover-colour),
+					var(--dark-button-hover-colour));
 		}
 	}
 
@@ -241,10 +231,8 @@
 		margin-left: map-get($margins, m);
 		border: none;
 		border-radius: map-get($border-radius, m);
-		background-color: light-dark(
-			var(--light-button-bg-colour),
-			var(--dark-button-bg-colour)
-		);
+		background-color: light-dark(var(--light-button-bg-colour),
+				var(--dark-button-bg-colour));
 		width: 40px;
 		height: 40px;
 		color: light-dark(var(--light-text-colour), var(--dark-text-colour));
@@ -252,10 +240,8 @@
 
 		&:hover {
 			@include smooth-transiton();
-			background-color: light-dark(
-				var(--light-button-hover-colour),
-				var(--dark-button-hover-colour)
-			);
+			background-color: light-dark(var(--light-button-hover-colour),
+					var(--dark-button-hover-colour));
 		}
 	}
 }

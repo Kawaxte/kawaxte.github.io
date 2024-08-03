@@ -32,12 +32,12 @@ jobs:
         run: deno fmt
 
       - name: Build site
-        run: deno task lume:build
+        run: deno task build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "_site"
+          path: "_fresh"
 
   deploy:
     name: Deploy

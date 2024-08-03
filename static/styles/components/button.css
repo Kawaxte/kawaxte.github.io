@@ -1,0 +1,35 @@
+.btn,
+.btn-icon {
+  align-items: center;
+  border-radius: 1rem; /* 16px */
+  display: inline-flex;
+  font-weight: bold;
+  justify-content: center;
+  min-width: 6.25rem; /* 100px */
+  padding: .5rem 1rem; /* 8px 16px */
+  text-decoration: none;
+  transition: background-color .3s ease, color .3s ease;
+
+  @apply bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-50;
+
+  &:hover {
+    @apply bg-gray-300 dark:bg-gray-600;
+  }
+}
+
+.btn-icon {
+  min-width: 2.5rem; /* 40px */
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 1.5rem; /* 16px 24px */
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-gray-50 dark:bg-blue-600 dark:text-gray-50;
+
+  &:hover {
+    @apply bg-blue-700 dark:bg-blue-700;
+  }
+}

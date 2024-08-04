@@ -1,11 +1,11 @@
 import type { JSX } from "preact";
-import BaseLayout from "../components/layouts/baseLayout.tsx";
-import ContentLayout from "../components/layouts/contentLayout.tsx";
+import Content from "../components/layouts/content.tsx";
+import Page from "../components/layouts/page.tsx";
 
 export default function Home(): JSX.Element {
   return (
-    <BaseLayout>
-      <ContentLayout>
+    <Page>
+      <Content>
         <div class="flex flex-col md:flex-row items-center justify-between">
           <div class="md:w-1/2 mb-8 md:mb-0">
             <h1 class="text-4xl font-bold mb-4">
@@ -24,7 +24,7 @@ export default function Home(): JSX.Element {
             />
           </div>
         </div>
-      </ContentLayout>
-    </BaseLayout>
+      </Content>
+    </Page>
   );
 }

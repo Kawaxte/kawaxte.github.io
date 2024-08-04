@@ -1,24 +1,18 @@
 import type { JSX } from "preact";
-import BaseLayout from "../components/layouts/baseLayout.tsx";
-import ContentLayout from "../components/layouts/contentLayout.tsx";
+import Button from "../components/button.tsx";
+import Content from "../components/layouts/content.tsx";
+import Page from "../components/layouts/page.tsx";
 
 export default function Thanks(): JSX.Element {
   return (
-    <BaseLayout>
-      <ContentLayout>
+    <Page>
+      <Content>
         <div class="flex flex-col items-center justify-center w-full max-w-md mx-auto">
           <i class="fas fa-check-circle text-6xl mb-4 text-green-500"></i>
-          <p class="text-xl text-center mb-6">
-            Thanks for your Message! I'll get back to you as soon as I could.
-          </p>
-          <a
-            href="/"
-            class="px-4 py-2 font-bold text-white bg-blue-600 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
-          >
-            Go Back
-          </a>
+          <p class="text-xl text-center mb-6">Thanks for Message!</p>
+          <Button href="/" variant="primary">Go Back</Button>
         </div>
-      </ContentLayout>
-    </BaseLayout>
+      </Content>
+    </Page>
   );
 }

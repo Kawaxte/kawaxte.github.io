@@ -1,5 +1,6 @@
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
+import { IconButton } from "../components/iconButton.tsx";
 
 export default function MobileMenu(): JSX.Element {
   const isMenuOpen = useSignal(false);
@@ -10,12 +11,11 @@ export default function MobileMenu(): JSX.Element {
 
   return (
     <>
-      <button
-        class="md:hidden btn-icon flex items-center justify-center ml-4 w-10 h-10"
+      <IconButton
         onClick={toggleMenu}
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+        icon="fa-bars"
+        className="md:hidden"
+      />
 
       <div
         class={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
@@ -31,42 +31,31 @@ export default function MobileMenu(): JSX.Element {
         >
           <div class="flex justify-between items-center p-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-50">
             <span class="text-2xl font-bold text-blue-600">Krysyxte</span>
-            <button
+            <IconButton
               onClick={toggleMenu}
-              class="btn-icon flex items-center justify-center ml-4 w-10 h-10"
-            >
-              <i class="fas fa-times"></i>
-            </button>
+              icon="fa-times"
+            />
           </div>
           <nav class="flex flex-col items-stretch p-4">
-            <a
-              href="/"
-              class="btn text-left mb-4 justify-start"
-              onClick={toggleMenu}
-            >
-              <i class="fas fa-home mr-2"></i> Home
-            </a>
-            <a
-              href="/projects"
-              class="btn text-left mb-4 justify-start"
-              onClick={toggleMenu}
-            >
-              <i class="fas fa-project-diagram mr-2"></i> Projects
-            </a>
-            <a
-              href="/about"
-              class="btn text-left mb-4 justify-start"
-              onClick={toggleMenu}
-            >
-              <i class="fas fa-info-circle mr-2"></i> About
-            </a>
-            <a
-              href="/contact"
-              class="btn text-left mb-4 justify-start"
-              onClick={toggleMenu}
-            >
-              <i class="fas fa-envelope mr-2"></i> Contact
-            </a>
+            {[
+              { href: "/", icon: "fa-home", text: "Home" },
+              {
+                href: "/projects",
+                icon: "fa-project-diagram",
+                text: "Projects",
+              },
+              { href: "/about", icon: "fa-info-circle", text: "About" },
+              { href: "/contact", icon: "fa-envelope", text: "Contact" },
+            ].map(({ href, icon, text }) => (
+              <a
+                key={href}
+                href={href}
+                class="btn text-left mb-4 justify-start"
+                onClick={toggleMenu}
+              >
+                <i class={`fas ${icon} mr-2`}></i> {text}
+              </a>
+            ))}
           </nav>
         </div>
       </div>

@@ -17,4 +17,7 @@
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
+  "files.watcherExclude": {
+    "**/target": true
+  },
 }

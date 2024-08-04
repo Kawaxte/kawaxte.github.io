@@ -2,9 +2,6 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import { type Manifest } from "$fresh/server.ts";
-import * as $mobileMenu from "./islands/mobileMenu.tsx";
-import * as $themeToggle from "./islands/themeToggle.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_500 from "./routes/_500.tsx";
 import * as $_app from "./routes/_app.tsx";
@@ -13,6 +10,9 @@ import * as $contact from "./routes/contact.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $projects from "./routes/projects.tsx";
 import * as $thanks from "./routes/thanks.tsx";
+import * as $mobileMenu from "./islands/mobileMenu.tsx";
+import * as $theme from "./islands/theme.tsx";
+import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
 	routes: {
@@ -27,7 +27,7 @@ const manifest = {
 	},
 	islands: {
 		"./islands/mobileMenu.tsx": $mobileMenu,
-		"./islands/themeToggle.tsx": $themeToggle,
+		"./islands/theme.tsx": $theme,
 	},
 	baseUrl: import.meta.url,
 } satisfies Manifest;

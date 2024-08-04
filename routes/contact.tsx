@@ -1,8 +1,10 @@
 import type { Handlers } from "$fresh/server.ts";
 import { setCookie } from "@std/http";
 import type { JSX } from "preact";
-import BaseLayout from "../components/layouts/baseLayout.tsx";
-import ContentLayout from "../components/layouts/contentLayout.tsx";
+import Button from "../components/button.tsx";
+import FormInput from "../components/formInput.tsx";
+import Content from "../components/layouts/content.tsx";
+import Page from "../components/layouts/page.tsx";
 
 export const handler: Handlers = {
   async POST(req: Request): Promise<Response> {
@@ -41,8 +43,8 @@ export default function Contact(): JSX.Element {
   const timestamp = new Date().getTime();
 
   return (
-    <BaseLayout>
-      <ContentLayout>
+    <Page>
+      <Content>
         <div class="flex flex-col items-center justify-center w-full max-w-md mx-auto">
           <h1 class="text-blue-600 text-3xl font-bold text-center">
             Get in Touch
@@ -58,39 +60,30 @@ export default function Contact(): JSX.Element {
               name="_next"
               value={`/thanks?t=${timestamp}`}
             />
-            <input
-              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-600 focus:outline-none focus:ring"
+            <FormInput
               type="text"
               name="name"
               placeholder="Name"
-              required
+              required={true}
             />
-            <input
-              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-600 focus:outline-none focus:ring"
+            <FormInput
               type="email"
               name="email"
               placeholder="Email Address (optional)"
             />
-            <textarea
-              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-600 focus:outline-none focus:ring"
+            <FormInput
+              type="textarea"
               name="message"
-              rows={3}
               placeholder="Your Message"
-              required
-              style={{ resize: "vertical", minHeight: "6rem" }}
-            >
-            </textarea>
+              required={true}
+              rows={3}
+            />
             <div class="flex items-center justify-center">
-              <button
-                class="px-4 py-2 font-bold text-white bg-blue-600 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
-                type="submit"
-              >
-                Send Message
-              </button>
+              <Button variant="primary" type="submit">Send Message</Button>
             </div>
           </form>
         </div>
-      </ContentLayout>
-    </BaseLayout>
+      </Content>
+    </Page>
   );
 }

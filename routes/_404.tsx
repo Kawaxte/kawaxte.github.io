@@ -1,11 +1,11 @@
 import type { JSX } from "preact";
-import BaseLayout from "../components/layouts/baseLayout.tsx";
-import ContentLayout from "../components/layouts/contentLayout.tsx";
+import Content from "../components/layouts/content.tsx";
+import Page from "../components/layouts/page.tsx";
 
 export default function Error404(): JSX.Element {
   return (
-    <BaseLayout>
-      <ContentLayout>
+    <Page>
+      <Content>
         <div class="flex flex-col items-center justify-center w-full max-w-md mx-auto">
           <i class="fas fa-search text-6xl mb-4 text-blue-600"></i>
           <h1 class="text-4xl font-bold text-blue-600 mb-4">404</h1>
@@ -19,7 +19,7 @@ export default function Error404(): JSX.Element {
             Go Back
           </a>
         </div>
-      </ContentLayout>
-    </BaseLayout>
+      </Content>
+    </Page>
   );
 }

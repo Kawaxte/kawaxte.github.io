@@ -13,7 +13,7 @@ export default function Thanks(): JSX.Element {
           </p>
           <a
             href="/"
-            class="px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
+            class="px-4 py-2 font-bold text-white bg-blue-600 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
           >
             Go Back
           </a>

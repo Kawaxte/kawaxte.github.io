@@ -59,20 +59,20 @@ export default function Contact(): JSX.Element {
               value={`/thanks?t=${timestamp}`}
             />
             <input
-              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-600 focus:outline-none focus:ring"
               type="text"
               name="name"
               placeholder="Name"
               required
             />
             <input
-              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-600 focus:outline-none focus:ring"
               type="email"
               name="email"
               placeholder="Email Address (optional)"
             />
             <textarea
-              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+              class="w-full px-3 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-600 dark:focus:border-blue-600 focus:outline-none focus:ring"
               name="message"
               rows={3}
               placeholder="Your Message"
@@ -82,10 +82,10 @@ export default function Contact(): JSX.Element {
             </textarea>
             <div class="flex items-center justify-center">
               <button
-                class="px-4 py-2 font-bold text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
+                class="px-4 py-2 font-bold text-white bg-blue-600 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Send
+                Send Message
               </button>
             </div>
           </form>

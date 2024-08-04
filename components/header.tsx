@@ -11,6 +11,7 @@ export default function Header(): JSX.Element {
           <a href="/" class="btn">Home</a>
           <a href="#" class="btn">Projects</a>
           <a href="#" class="btn">About</a>
+          <a href="/contact" class="btn">Contact</a>
         </nav>
         <div class="flex items-center">
           <ThemeToggle />

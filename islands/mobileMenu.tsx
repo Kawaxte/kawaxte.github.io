@@ -24,10 +24,10 @@ export default function MobileMenu(): JSX.Element {
         onClick={toggleMenu}
       >
         <div
-          class={`fixed top-0 right-0 bottom-0 w-64 bg-white dark:bg-gray-900 z-50 transition-transform duration-300 ${
+          class={`fixed top-0 right-0 bottom-0 w-3/4 bg-white dark:bg-gray-900 z-50 transition-transform duration-300 ${
             isMenuOpen.value ? "translate-x-0" : "translate-x-full"
           }`}
-          onClick={(e) => e.stopPropagation()}
+          onClick={(event) => event.stopPropagation()}
         >
           <div class="flex justify-between items-center p-4 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-50">
             <span class="text-2xl font-bold text-blue-600">Krysyxte</span>
@@ -39,16 +39,32 @@ export default function MobileMenu(): JSX.Element {
             </button>
           </div>
           <nav class="flex flex-col items-stretch p-4">
-            <a href="/" class="btn text-left mb-4" onClick={toggleMenu}>
+            <a
+              href="/"
+              class="btn text-left mb-4 justify-start"
+              onClick={toggleMenu}
+            >
               <i class="fas fa-home mr-2"></i> Home
             </a>
-            <a href="/projects" class="btn text-left mb-4" onClick={toggleMenu}>
+            <a
+              href="/projects"
+              class="btn text-left mb-4 justify-start"
+              onClick={toggleMenu}
+            >
               <i class="fas fa-project-diagram mr-2"></i> Projects
             </a>
-            <a href="/about" class="btn text-left mb-4" onClick={toggleMenu}>
+            <a
+              href="/about"
+              class="btn text-left mb-4 justify-start"
+              onClick={toggleMenu}
+            >
               <i class="fas fa-info-circle mr-2"></i> About
             </a>
-            <a href="/contact" class="btn text-left mb-4" onClick={toggleMenu}>
+            <a
+              href="/contact"
+              class="btn text-left mb-4 justify-start"
+              onClick={toggleMenu}
+            >
               <i class="fas fa-envelope mr-2"></i> Contact
             </a>
           </nav>

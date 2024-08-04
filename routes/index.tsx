@@ -15,11 +15,6 @@ export default function Home(): JSX.Element {
               Alleviating boredom through code, alternating between
               dissatisfaction und stagnation.
             </p>
-            {
-              /* <div class="space-x-4">
-              <a href="#" class="btn btn-primary">View Projects</a>
-            </div> */
-            }
           </div>
           <div class="md:w-1/2 flex justify-center">
             <img
